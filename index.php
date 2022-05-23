@@ -27,23 +27,4 @@
     <button type="button" id="upload" class="upload_btn btn btn-success ">アップロード<i class="fas fa-upload "></i></button>
 </form>
 </body>
-<script>
-   
-  
-
-    // $('#upload').on('click', function(){
-    //     let name = $('.file_name').val();
-    //     $.ajax({
-    //        url : 'upload.php',
-    //        method : 'post',
-    //        data : {name},
-    //        dataType : 'json',
-    //        success : function(res){
-    //            $('#msg').html(res);
-    //        }
-    //     });
-    // });
-    
-</Script>
-
 </html>

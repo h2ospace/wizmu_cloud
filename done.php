@@ -24,7 +24,6 @@
     if(!isset($_SESSION['file_name'])){
         header('location: index.php');
     } 
-
 class Account{
         public $result;
         public $mail        = 'makoto.taniguchi@gmail.com' ;
@@ -34,6 +33,7 @@ class Account{
         public $stream_url;
     
     public function get_account_id()
+    
     {
         $mail       = $this->mail ;
         $auth_key   = $this->auth_key;
@@ -123,4 +123,5 @@ class Account{
 </body>
 </html>
 <?php session_destroy();?>
+
 
