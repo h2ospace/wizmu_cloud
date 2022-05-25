@@ -1,37 +1,37 @@
 <?php
 set_time_limit(0);
+ini_set('post_max_size', 0);
 define('PATH', 'uploads/');
-
 if (isset($_FILES['file']['name'])) {
-	
-	if (0 < $_FILES['file']['error']) {
-		$result_err = array(
-			'html' => '<span style="color:red;">Error during file upload ' . $_FILES['file']['error'] . '</span>',
-			'success' => '0'
-		);
-		echo json_encode($result_err);
-	} else {
-		if (file_exists(PATH . $_FILES['file']['name'])) {
-			$result_exist = array(
-				'html' => '<span style="color:red;">File already exists at uploads/' . $_FILES['file']['name'] . '</span>',
-				'success' => '1'
-			);
-			echo json_encode($result_exist);
-		} else {
-			move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);
-			$result_success = array(
-				'html' => '<span style="color:green;">File successfully uploaded to local server uploads/' . $_FILES['file']['name'] . '</span>',
-				'success' => '2'
-			);
-			//sending file_info by session.
-			//if uploading success to local_server, session_start.
-			session_start();
-				$_SESSION['file_path'] = PATH.$_FILES['file']['name'];
-				$_SESSION['file_name'] = $_FILES['file']['name'];
-				echo json_encode($result_success);
-			}
-		}
-	} else {
-		echo json_encode('<span style="color:red;">Please choose a file</span>');
-	}
+    $temp = $_FILES['file']['tmp_name'];
+    $file_name = $_FILES['file']['name'];
+    $path = PATH . $_FILES['file']['name'];
+    if (!file_exists($path)) {
+        if (move_uploaded_file($temp, $path)) {
+            session_start();
+            $_SESSION['file_path'] = $path;
+            $_SESSION['file_name'] = $file_name;
+?>
+            <span data-val = '1'></span>
+            <script>
+                location.href = "done.php";
+                </script>
+        <?php
+        } else {
+            ?>
+            <span data-val = '2'></span>
+        <?php
+        }
+    } else {
+        ?>
+            <span data-val = '3'></span>
+    <?php
+    }
+} else {
+    ?>
+    <script>
+        location.href = "index.php";
+    </script>
+<?php
+}
 ?>

@@ -1,0 +1,286 @@
+body{
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+.upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    background : linear-gradient(45deg, rgb(97, 87, 255) 0%, rgb(0, 204, 255) 100%);
+    margin: 100px auto;
+    padding: 50px;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.result{
+    height: 20px;
+    color: #FFF;
+}
+.icon_movie{
+    position: absolute;
+    margin-top: 70px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    
+}
+.icon_movie i{
+    font-size: 50px;
+    color: #FFF;
+    margin-bottom: 30px;
+    opacity: 1;
+    transition: opacity 1s;
+}
+.upload>div:nth-child(2){
+    position: relative;
+    top: 0;
+     margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(222,222,222,0.1);
+    border-radius: 5px;
+}
+.up_form{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+.upload_frm *{
+}
+.upload_frm:first-child{
+}
+.upload_frm:last-child{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.upload_frm{
+    margin-bottom: 0;
+    height: 100%;
+}
+.file_choose{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.file_choose label{
+    width: 100%;
+    height: 100%;
+}
+.form-input,
+.reset
+{
+    display: none;
+}
+.file_trigger{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-left: 130px solid #04aa6d;
+    background-color: #FFF;
+    border-radius: inherit;
+    box-shadow: 3px 3px 10px #333;
+    cursor: pointer;
+    text-align: center;
+    
+    
+}
+.file_trigger:hover{
+    border-left: 130px solid #0f6d4a;
+    background-color: #eee;
+    box-shadow: 3px 3px 5px #333;
+}
+.file_trigger:active{
+    border-left: 130px solid #04aa6d;
+    background-color: #FFF;
+    box-shadow: 1px 1px 5px #333;
+}
+.file_trigger div{
+    margin-left: -100px;
+}
+.file_trigger span:first-child{
+    position: absolute;
+    margin-left: -110px;
+    color: #FFF;
+}
+.file_name{
+    /* margin-left: 10px; */
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+}
+.title{
+    font-size: 26px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0px 15px ;
+    color: #FFF;
+    border-bottom: 2px solid #FFF;
+    font-weight: bolder;
+}
+
+.choose_file_label{
+    background-color: #077a0d;
+}
+.upload_frm:first-child{
+    width: 100%;
+}
+.btn_grp{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload_btn{
+    width: 50%;
+    text-align:center;
+    transition: text-align 1s;
+}
+.upload_btn:hover{
+    text-align: center;
+}
+.upload_icon{
+    position: absolute;
+    top:20px;
+    right:150px;
+    color: #FFF;
+}
+
+.loading_icon{
+    display:none;
+    position: absolute;
+    left: 140px;
+    color: #FFF;
+}
+.loading_status{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+.status{
+    display: none;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 33px;
+    opacity: 0.7;    
+}
+.text-warning{
+    color: #FFF !important;
+
+}
+
+/* Watch video frame */
+.view_movie{
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+}
+.frame{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border:none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.close_btn{
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    opacity: 0.1;
+    z-index: 10;
+}
+.close_btn:hover{
+    opacity: 1.0;
+}
+.close_btn:active{
+    opacity: 0.5;
+}
+.v_mark{
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+}
+/* upload status progress bar */
+
+.progress_1,
+.progress_2,
+.progress_per {
+    margin: 30px auto 0;
+    width: 80%;
+    text-align:center;
+    background-color: rgba(234, 236, 104, 0.6);
+    display: none;
+}
+.progress-bar_1, 
+.progress-bar_2, 
+.progress-bar_per {
+    width:0%;
+    -webkit-transition: width .3s;
+    -moz-transition: width .3s;
+    transition: width .3s;
+    background-color: #FF6347
+}
+.stream_loading{
+    background-color: #333;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.done_progress{
+    position: absolute;
+    bottom: 60px;
+    width: 80%;
+    opacity: 0.2;
+}
+.done_progress_per{
+    width: 0%;
+}
+.done_load{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    animation: 1s linear infinite spinner-border;
+    
+}
+.btnSubmit{
+    background-color:#09f;
+    border:0;
+    padding:10px 40px;
+    color:#FFF;
+    border:#F0F0F0 1px solid; 
+    border-radius:4px;
+}
+#targetLayer{
+    width:100%;
+    text-align:center;
+} 
