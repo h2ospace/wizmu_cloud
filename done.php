@@ -94,6 +94,7 @@
             $auth       = $this->auth_key;
 
             $curl       = curl_init();
+            
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => 'https://api.cloudflare.com/client/v4/accounts/' . $id . '/stream',
